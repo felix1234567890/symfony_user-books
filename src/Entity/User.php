@@ -5,12 +5,16 @@ namespace App\Entity;
 use App\Repository\UserRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Timestampable\Traits\TimestampableEntity;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
  * @ORM\Table(name="users")
+ * @UniqueEntity("email", message="email.unique")
+ * @UniqueEntity("username", message="username.unique")
  */
-class User
+class User implements \Symfony\Component\Security\Core\User\UserInterface
 {
     use TimestampableEntity;
     /**
@@ -22,16 +26,24 @@ class User
 
     /**
      * @ORM\Column(type="string", length=255, unique=true)
+     * @Assert\NotBlank(message="email.not_blank")
+     * @Assert\Email(message="email.email")
      */
     private $email;
 
     /**
      * @ORM\Column(type="string", length=255)
+     *
+     * @Assert\NotBlank(message="password.not_blank")
+     * @Assert\Length(min="6", minMessage="password.min_length")
      */
     private $password;
 
     /**
      * @ORM\Column(type="string", length=255, unique=true)
+     *
+     * @Assert\NotBlank(message="username.not_blank")
+     * @Assert\Length(min="3", minMessage="username.minLength")
      */
     private $username;
 
@@ -74,5 +86,20 @@ class User
         $this->username = $username;
 
         return $this;
+    }
+
+    public function getRoles()
+    {
+        return ['ROLE_USER'];
+    }
+
+    public function getSalt()
+    {
+        // TODO: Implement getSalt() method.
+    }
+
+    public function eraseCredentials()
+    {
+        // TODO: Implement eraseCredentials() method.
     }
 }

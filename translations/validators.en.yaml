@@ -1,0 +1,8 @@
+email.unique: User's email should be unique
+email.not_blank: You should provide email
+email.email: This is not valid email format
+username.unique: User's username should be unique
+username.not_blank: You should provide username
+username.min_length: User's username should have at least 3 characters
+password.not_blank: You should provide password
+password.min_length: Password should have at least 6 characters
