@@ -18,7 +18,14 @@ class BookRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Book::class);
     }
-
+    public function findAuthorBooks(string $authorUsername){
+        return $this->createQueryBuilder('b')
+            ->innerJoin('b.author', 'a')
+            ->andWhere('a.username = :author_username')
+            ->setParameter('author_username', $authorUsername)
+            ->getQuery()
+            ->getResult();
+    }
     // /**
     //  * @return Book[] Returns an array of Book objects
     //  */
