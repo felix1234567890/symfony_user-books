@@ -11,6 +11,7 @@ use Symfony\Component\Routing\Annotation\Route;
 /**
  * @Route("/api/books", name="get_books", methods={"GET"})
  * @QueryParam(name="author", requirements="[A-Za-z0-9]+", nullable=true)
+ * @QueryParam(name="orderBy", requirements="[A-Za-z0-9]+", nullable=true)
  */
 class GetBooksController extends AbstractController
 {
@@ -23,9 +24,13 @@ class GetBooksController extends AbstractController
     public function __invoke(ParamFetcher $paramFetcher)
     {
         $author = $paramFetcher->get('author');
+        $orderBy = $paramFetcher->get('orderBy');
         if($author){
             $books =$this->bookRepository->findAuthorBooks($author);
-        } else {
+        } else if($orderBy && $orderBy === "title"){
+            $books = $this->bookRepository->orderByTitle();
+        }
+        else {
             $books = $this->bookRepository->findAll();
         }
 

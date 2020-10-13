@@ -14,7 +14,7 @@ class AuthorVoter extends Voter
 
     protected function supports(string $attribute, $subject)
     {
-        return $attribute === 'AUTHOR' && ($subject instanceof Book );
+        return $attribute === 'AUTHOR' && ($subject instanceof Book);
     }
 
     protected function voteOnAttribute(string $attribute, $subject, TokenInterface $token)

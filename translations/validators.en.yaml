@@ -7,3 +7,5 @@ username.min_length: User's username should have at least 3 characters
 password.not_blank: You should provide password
 password.min_length: Password should have at least 6 characters
 book.unique: Book's title should be unique
+title.not_blank: Book's title is mandatory
+description.not_blank: Book's description should be provided
