@@ -17,3 +17,13 @@ App\Entity\Book:
     title: 'Sto ima prika'
     description: 'Nemam pojma sto da stavim u opis knjige pa cu ovako svasta pisati'
     author: '@user_1'
+
+App\Entity\Review:
+  review_1:
+    text: 'Odlicna knjiga. Preporucio bih je svakome za procitati'
+    book: '@book_1'
+    author: '@user_2'
+  review_2:
+    text: 'Ova knjiga je necitljiva. Izbjegavajte je u sirokom luku.'
+    book: '@book_2'
+    author: '@user_2'

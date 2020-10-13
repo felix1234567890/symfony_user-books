@@ -9,3 +9,4 @@ password.min_length: Password should have at least 6 characters
 book.unique: Book's title should be unique
 title.not_blank: Book's title is mandatory
 description.not_blank: Book's description should be provided
+text.not_blank: Review's text should not be empty
