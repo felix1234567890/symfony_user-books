@@ -11,7 +11,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="739feed8-0987-4066-9e53-486d16dddaa4" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/userBooks.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/userBooks.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,6 +124,16 @@
       <path value="$PROJECT_DIR$/vendor/lcobucci/jwt" />
       <path value="$PROJECT_DIR$/vendor/lexik/jwt-authentication-bundle" />
       <path value="$PROJECT_DIR$/vendor/namshi/jose" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/data-fixtures" />
+      <path value="$PROJECT_DIR$/vendor/fzaninotto/faker" />
+      <path value="$PROJECT_DIR$/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/vendor/nelmio/alice" />
+      <path value="$PROJECT_DIR$/vendor/theofidry/alice-data-fixtures" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-fixtures-bundle" />
     </include_path>
   </component>
   <component name="ProjectId" id="1illGSDYQKWWOOoTl1OmGAdX0KQ" />
@@ -148,7 +164,7 @@
       <updated>1602489964143</updated>
       <workItem from="1602489965284" duration="3021000" />
       <workItem from="1602498760905" duration="2592000" />
-      <workItem from="1602580285838" duration="7311000" />
+      <workItem from="1602580285838" duration="8988000" />
     </task>
     <servers />
   </component>
@@ -168,18 +184,18 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1232" y="234" width="411" height="645" key="#com.intellij.ide.util.MemberChooser" timestamp="1602499657085">
+    <state x="1232" y="234" width="411" height="652" key="#com.intellij.ide.util.MemberChooser" timestamp="1602588785808">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state x="1232" y="234" width="411" height="645" key="#com.intellij.ide.util.MemberChooser/72.27.1848.1053@72.27.1848.1053" timestamp="1602499657085" />
+    <state x="1232" y="234" width="411" height="652" key="#com.intellij.ide.util.MemberChooser/72.27.1848.1053@72.27.1848.1053" timestamp="1602588785808" />
     <state x="1171" y="311" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1602587261512">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="1171" y="311" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1602587261512" />
-    <state x="1164" y="273" width="585" height="568" key="NewPhpClassDialog" timestamp="1602585274459">
+    <state x="1164" y="273" width="585" height="568" key="NewPhpClassDialog" timestamp="1602588761214">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state x="1164" y="273" width="585" height="568" key="NewPhpClassDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1602585274459" />
+    <state x="1164" y="273" width="585" height="568" key="NewPhpClassDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1602588761214" />
     <state x="1128" y="162" width="620" height="783" key="find.popup" timestamp="1602585465815">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
