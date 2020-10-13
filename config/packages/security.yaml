@@ -22,5 +22,11 @@ security:
                 password_path: user.password
                 success_handler: Lexik\Bundle\JWTAuthenticationBundle\Security\Http\Authentication\AuthenticationSuccessHandler
                 failure_handler: Lexik\Bundle\JWTAuthenticationBundle\Security\Http\Authentication\AuthenticationFailureHandler
-
+        api:
+            pattern: ^/api
+            stateless: true
+            anonymous: true
+            guard:
+                authenticators:
+                    - App\Security\Guard\JWTAuthenticator
 
