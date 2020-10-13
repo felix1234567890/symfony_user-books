@@ -7,3 +7,13 @@ App\Entity\User:
     username: 'ivan'
     email: 'ivan@mail.com'
     password: 'password10'
+
+App\Entity\Book:
+  book_1:
+    title: 'Bilo jednom u Hrvatskoj'
+    description: 'Ovo je opis knjige bilo jednom u Hrvatskoj'
+    author: '@user_1'
+  book_2:
+    title: 'Sto ima prika'
+    description: 'Nemam pojma sto da stavim u opis knjige pa cu ovako svasta pisati'
+    author: '@user_1'
