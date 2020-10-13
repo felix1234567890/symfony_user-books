@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Controller\Book;
+namespace App\Controller\Review;
 
 use App\Entity\Book;
-use App\Form\BookType;
+use App\Entity\Review;
+use App\Form\ReviewType;
 use App\Security\UserResolver;
 use Doctrine\ORM\EntityManagerInterface;
 use FOS\RestBundle\Controller\Annotations\View;
@@ -12,10 +13,10 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/api/books", name="create_book", methods={"POST"})
+ * @Route("/api/books/{slug}/reviews", name="create_review", methods={"POST"})
  * @View(statusCode=201)
  */
-class CreateBookController
+class CreateReviewController
 {
     private FormFactoryInterface $formFactory;
 
@@ -32,21 +33,21 @@ class CreateBookController
         $this->entityManager = $entityManager;
         $this->userResolver = $userResolver;
     }
-    public function __invoke(Request $request)
+    public function __invoke(Request $request, Book $book)
     {
-     $user = $this->userResolver->getCurrentUser();
-     $book = new Book();
-     $book->setAuthor($user);
-     $form = $this->formFactory->createNamed('book', BookType::class, $book);
-     $form->submit($request->request->get('book'));
+       $author = $this->userResolver->getCurrentUser();
+       $review = new Review();
+       $review->setAuthor($author);
+       $review->setBook($book);
+
+        $form = $this->formFactory->createNamed('review', ReviewType::class, $review);
+        $form->submit($request->request->get('review'));
 
         if ($form->isValid()) {
-            $this->entityManager->persist($book);
+            $this->entityManager->persist($review);
             $this->entityManager->flush();
-
-            return ['book' => $book];
+            return ['review' => $review];
         }
-
         return ['form' => $form];
     }
 }
