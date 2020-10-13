@@ -4,6 +4,8 @@ namespace App\Repository;
 
 use App\Entity\User;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\NonUniqueResultException;
+use Doctrine\ORM\NoResultException;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -18,7 +20,32 @@ class UserRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, User::class);
     }
-
+    public function paginateUsers(int $offset, int $limit)
+    {
+       return $this->createQueryBuilder('u')
+            ->setFirstResult($offset)
+            ->setMaxResults($limit)
+            ->getQuery()
+            ->getResult();
+    }
+    public function getUserCount()
+    {
+        try {
+            return (int) $this->createQueryBuilder('u')
+                ->select('count(u.id) as total')
+                ->getQuery()
+                ->getSingleScalarResult();
+        } catch (NoResultException  | NonUniqueResultException $exception) {
+            return 0;
+        }
+    }
+    public function searchUsers(string $search){
+        return $this->createQueryBuilder('u')
+            ->andWhere('u.username LIKE :search')
+            ->setParameter('search', '%'.$search.'%')
+            ->getQuery()
+            ->getResult();
+    }
     // /**
     //  * @return User[] Returns an array of User objects
     //  */
